@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <lightning-input class="slds-p-bottom_x-small" type="text" label="Enter word" value={inputValue} onchange={handleChangeInput}></lightning-input>
+            <lightning-button data-id="addbutton" label="Add to list" onclick={handleAddWord}></lightning-button>
+            <lightning-button data-id="clearbutton" class="slds-p-left_x-small" label="Clear list" onclick={handleClearList}></lightning-button>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <c-child 
+                    rows={rows} 
+                    message={message}
+                    onfillinput={handleFillInput}>
+                </c-child>
+            </div>
+            <template if:true={isError}>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <p class="slds-text-title" style="font-size: 30px;">Error!</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <div class="slds-p-around_medium">
+        <p class="slds-text-title slds-p-top_x-small">{message}</p>
+        <ol class="slds-list_ordered">
+            <template for:each={rows} for:item="row">
+                <li onclick={handleClick} data-id={row.id} key={row.id} value={row.id}>{row.value}</li>
+            </template>
+        </ol>
+    </div>
+</template>
